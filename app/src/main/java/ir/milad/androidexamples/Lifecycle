@@ -1,0 +1,38 @@
+Started Service ( Background Service )
+    Calling Component [ Activity, BroadcastReceiver, Service Or ContentProvider ]
+    startService
+
+    onCreate -> onStartCommand ( Service running in main thread)
+    onStartCommand == Active Lifetime
+
+
+    stopService(intent) or stopSelf()
+
+    onDestroy
+
+Intent Service ( Advanced Background Service )
+    Calling Component [ like Started Service ]
+
+    onCreate -> onStartCommand -> onHandleIntent ( Worker Thread )
+
+    stopSelf() == automatically when task is completed
+
+    onDestroy
+
+
+
+
+onCreate
+    Service initializes itself
+    Called only once no matter how many times you call startService
+onStart
+    Executes in main thread
+    Called as many times as you call startService
+onHandleIntent
+    Only applicable for intent service
+    Executes in worker thread
+    Executes on task at a time
+onDestroy
+    Called when stopService or stopSelf is executed
+    Service is destroyed
+    Free up resources in this method

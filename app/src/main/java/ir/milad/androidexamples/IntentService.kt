@@ -17,10 +17,13 @@ class IntentService : IntentService("MyWorkerThread") {
         Log.i(TAG, "onCreate , Thread : " + Thread.currentThread().name)
     }
 
-    override fun onHandleIntent(p0: Intent?) {
+    override fun onHandleIntent(intent: Intent?) {
         Log.i(TAG, "onHandleIntent , Thread : " + Thread.currentThread().name)
+
+        val duration = intent?.getIntExtra("sleepTime",-12) ?: 12
+
         var ctr = 1
-        while (ctr <= 12){
+        while (ctr <= duration){
             Log.i(TAG,"Time elapsed: $ctr , Thread : " + Thread.currentThread().name)
             try{
                 Thread.sleep(1000)

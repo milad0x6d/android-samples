@@ -26,6 +26,8 @@ class BackgroundService : Service() {
         //START_NOT_STICKY : Service not restarted
         //                   Intent is lost ( becomes null )
 
+        val duration = intent?.getIntExtra("sleepTime",12) ?: 12
+
         MyAsyncTask().execute()
 
         return START_STICKY
@@ -35,7 +37,6 @@ class BackgroundService : Service() {
     override fun onBind(p0: Intent?): IBinder? {
         Log.i(TAG, "onBind")
         return null
-
     }
 
 

@@ -1,0 +1,11 @@
+* Your Service should always be accessible within your own application
+    use android:exported="false" in <service> tag of manifest file
+
+* Use explicit intent to start or stop service
+   usage of implicit intent is highly discouraged
+        Intent intent = new Intent(this,MyBackgroundService.class)//explicit
+        Intent intent = new Intent("my.intent.service.xyz.abc");//implicit
+
+* Do not use intent filter for your <service> in manifest file
+
+* To interact with service use Local Broadcasts

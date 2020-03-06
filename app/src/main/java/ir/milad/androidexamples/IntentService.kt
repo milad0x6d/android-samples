@@ -3,6 +3,7 @@ package ir.milad.androidexamples
 import android.app.IntentService
 import android.content.Intent
 import android.util.Log
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import java.lang.Exception
 
 
@@ -32,6 +33,11 @@ class IntentService : IntentService("MyWorkerThread") {
             }
             ctr++
         }
+
+        val localIntent = Intent("my.own.broadcast")
+        localIntent.putExtra("result",ctr)
+        //sendBroadcast(localIntent) this will send to out side application too
+        LocalBroadcastManager.getInstance(this).sendBroadcast(localIntent)//send broadcast just within application
     }
 
     override fun onDestroy() {

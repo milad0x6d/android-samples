@@ -1,8 +1,12 @@
 package ir.milad.androidexamples
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,9 +28,28 @@ class MainActivity : AppCompatActivity() {
 
         btnStartIntentService.setOnClickListener {
             val intent = Intent(this,IntentService::class.java)
-            intent.putExtra("sleepTime",12)
+            intent.putExtra("sleepTime",5)
             startService(intent)
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val intentFilter = IntentFilter("my.own.broadcast")
+        LocalBroadcastManager.getInstance(this).registerReceiver(myLocalBroadcastReceiver,intentFilter)
+    }
+
+    private val  myLocalBroadcastReceiver = object : BroadcastReceiver(){
+        override fun onReceive(p0: Context?, localIntent: Intent?) {
+            val result = localIntent?.getIntExtra("result",-1)
+            txtResult.text = result.toString()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(myLocalBroadcastReceiver)
     }
 
 }

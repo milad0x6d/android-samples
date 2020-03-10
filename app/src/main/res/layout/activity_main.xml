@@ -22,10 +22,17 @@
         android:layout_below="@id/btnStopBackgroundService"
         android:text="Start Intent Service"/>
 
+    <Button
+        android:id="@+id/btnStartJobIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStartIntentService"
+        android:text="Start Job Intent Service"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/txtResult"
-        android:layout_below="@id/btnStartIntentService"
+        android:layout_below="@id/btnStartJobIntentService"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

@@ -1,0 +1,9 @@
+- Create a subclass of JobIntentService
+- Override onHandleWork() method
+- Expose enqueueWork() method
+- Write code in manifest file
+    - for pre-oreo devices
+        - Get WAKE_LOCK permission
+    - for oreo device
+        - Allow JobIntentService to use JobScheduler API
+        - Declare android.permission.BIND_JOB_SERVICE

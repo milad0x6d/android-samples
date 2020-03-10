@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import ir.milad.androidexamples.jobintentservice.MyJobIntentService
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,IntentService::class.java)
             intent.putExtra("sleepTime",5)
             startService(intent)
+        }
+
+        btnStartJobIntentService.setOnClickListener {
+            val intent = Intent(this,MyJobIntentService::class.java)
+            intent.putExtra("sleepTime",5)
+            MyJobIntentService.enqueueWork(this,intent)
         }
 
     }

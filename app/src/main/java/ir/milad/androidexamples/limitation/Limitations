@@ -1,0 +1,3 @@
+- Background App cannot use intent service ( Background Service )
+    - Calling startService() from a background app throws IllegalStateException
+- Only Foreground App can use Intent Service ( Background Service )

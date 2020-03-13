@@ -5,3 +5,4 @@
 * dagger2-sharedpreference
 * mvvm-livedata
 * retrofit-gson
+* databinding-recyclerview

@@ -8,3 +8,4 @@
 * databinding-recyclerview
 * livedata
 * mvvm-bindingadapter
+* dagger2-retrofit

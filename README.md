@@ -7,3 +7,4 @@
 * retrofit-gson
 * databinding-recyclerview
 * livedata
+* mvvm-bindingadapter

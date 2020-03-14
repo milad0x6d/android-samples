@@ -6,3 +6,4 @@
 * mvvm-livedata
 * retrofit-gson
 * databinding-recyclerview
+* livedata

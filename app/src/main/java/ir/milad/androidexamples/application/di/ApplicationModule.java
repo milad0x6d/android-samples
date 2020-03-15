@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import dagger.Module;
 import dagger.Provides;
 import ir.milad.androidexamples.BuildConfig;
+import ir.milad.androidexamples.model.CredentialsManager;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -31,5 +32,10 @@ public class ApplicationModule {
     Gson gson(){
         GsonBuilder builder = new GsonBuilder();
         return builder.create();
+    }
+
+    @Provides
+    CredentialsManager credentialsManager(){
+        return new CredentialsManager();
     }
 }

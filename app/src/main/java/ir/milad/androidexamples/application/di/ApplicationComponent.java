@@ -1,6 +1,7 @@
 package ir.milad.androidexamples.application.di;
 
 import dagger.Component;
+import ir.milad.androidexamples.RestApplication;
 import ir.milad.androidexamples.application.Application;
 import retrofit2.Retrofit;
 
@@ -11,4 +12,6 @@ public interface ApplicationComponent {
 
     //uses inject
     void inject(Application application);
+
+    void inject(RestApplication restApplication);
 }

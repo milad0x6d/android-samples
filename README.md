@@ -10,3 +10,4 @@
 * mvvm-bindingadapter
 * dagger2-retrofit
 * navigation-component
+* camerax

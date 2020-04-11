@@ -7,18 +7,35 @@ import android.os.IBinder
 import android.util.Log
 import java.lang.Exception
 
+/*
+   Case 1 : if the service is not running and we call startService()
+    - onCreate() is executed
+    - onStartCommand() is executed
+
+   Case 2 : if the service is already and we call startService()
+    - onCreate() is not executed
+    - onStartCommand() is executed
+
+    startService method belongs to Context class
+ */
 class BackgroundService : Service() {
 
     val TAG = BackgroundService::class.java.simpleName
+
+    // optional to override
+    // Thread : main
     override fun onCreate() {
         super.onCreate()
         Log.i(TAG, "onCreate")
+
     }
 
+    // force to override
+    // Thread : main
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(TAG, "onStartCommand")
         //START_STICKY : Service restarts automatically
-        //               Intent is lost ( ata becomes null )
+        //               Intent is lost ( data becomes null )
 
         //START_REDELIVER_INTENT : Service restarts automatically
         //                         Intent redelivered
@@ -34,12 +51,15 @@ class BackgroundService : Service() {
     }
 
 
+    // force to override
     override fun onBind(p0: Intent?): IBinder? {
         Log.i(TAG, "onBind")
         return null
     }
 
 
+    // optional to override
+    // Thread : main
     override fun onDestroy() {
         Log.i(TAG, "onDestroy")
         super.onDestroy()

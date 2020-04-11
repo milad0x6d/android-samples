@@ -6,6 +6,12 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.JobIntentService
 
+// it work in all devices (API 14 onwards)
+// Hot it maintains compatibility
+    // - For Pre-Oreo devices it provides functionality similar to IntentService
+    // - For Oreo devices it internally uses JobScheduler API
+
+
 class MyJobIntentService :JobIntentService() {
 
     var TAG = MyJobIntentService::class.java.simpleName
@@ -19,6 +25,7 @@ class MyJobIntentService :JobIntentService() {
         Toast.makeText(this,"Task Execution Started",Toast.LENGTH_SHORT).show()
     }
 
+    // Thread : worker or background
     //this method is similar to IntentService onHandleService method
     override fun onHandleWork(intent: Intent) {
         Log.i(TAG, "onHandleIntent , Thread : " + Thread.currentThread().name)

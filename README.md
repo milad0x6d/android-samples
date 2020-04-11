@@ -12,3 +12,4 @@
 * navigation-component
 * camerax
 * forground-service
+* bound-service

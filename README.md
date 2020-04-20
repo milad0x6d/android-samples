@@ -13,3 +13,4 @@
 * camerax
 * forground-service
 * bound-service
+* thread-looper-handler

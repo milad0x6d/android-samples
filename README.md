@@ -14,3 +14,4 @@
 * forground-service
 * bound-service
 * thread-looper-handler
+* handler-thread

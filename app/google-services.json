@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30847330964",
+    "firebase_url": "https://sample-95b2c.firebaseio.com",
+    "project_id": "sample-95b2c",
+    "storage_bucket": "sample-95b2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30847330964:android:a02a389f732843b5bea281",
+        "android_client_info": {
+          "package_name": "ir.milad.androidexamples"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30847330964-j7ea9m64bb3iod97jvv06ckt7pfm651i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1fAtdF167S_6SFKZvjmHJxg49yceJqGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30847330964-j7ea9m64bb3iod97jvv06ckt7pfm651i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

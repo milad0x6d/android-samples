@@ -18,3 +18,4 @@
 * asynctask
 * threadpool
 * firebase-fcm
+* koin-retrofit

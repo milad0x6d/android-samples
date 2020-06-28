@@ -19,3 +19,4 @@
 * threadpool
 * firebase-fcm
 * koin-retrofit
+* coroutine

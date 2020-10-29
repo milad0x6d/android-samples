@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Examples</string>
+    <string name="fetch_user">Fetch User</string>
+
 </resources>

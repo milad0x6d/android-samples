@@ -20,3 +20,4 @@
 * firebase-fcm
 * koin-retrofit
 * coroutine
+* data-store
